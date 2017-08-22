@@ -1,4 +1,6 @@
-var getBooks = require('./getBooks.js')
+import getBooks from './getBooks'
+import * as Router from 'koa-router'
+
 var finalhandler = require('finalhandler')
 var http = require('http')
 var Router = require('router')
