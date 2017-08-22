@@ -1,3 +1,4 @@
+var getBooks = require('./getBooks.js')
 var finalhandler = require('finalhandler')
 var http = require('http')
 var Router = require('router')
@@ -19,7 +20,7 @@ router
 
 router.route('/something').get(function(req, res) {
   res.setHeader('Content-Type', 'application/json')
-  var books = { books: [{ title: 'The Title', author: 'Patrick West' }] }
+  var books = getBooks.getBooks()
   var booksStr = JSON.stringify(books)
   res.end(booksStr)
 })
