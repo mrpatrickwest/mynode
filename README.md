@@ -12,5 +12,6 @@ Software that will be used:
 * less - a CSS pre-processor that adds JavaScript-like functionality - http://lesscss.org/
 * yarn - build tool - https://yarnpkg.com
 * jest - JavaScript testing tool - https://facebook.github.io/jest/
+* koa - web framework for node.js - http://koajs.com/
 
 

@@ -7,7 +7,7 @@
   "author": "Patrick West",
   "license": "MIT",
   "scripts": {
-    "server": "node_modules/.bin/ts-node index.ts",
+    "server": "./node_modules/.bin/ts-node index.ts",
     "test": "jest"
   },
   "dependencies": {
@@ -26,12 +26,9 @@
     "@types/chalk": "^0.4.31",
     "@types/cookie": "^0.3.1",
     "@types/kcors": "^2.2.1",
-    "@types/knex": "^0.0.56",
     "@types/koa": "^2.0.39",
     "@types/koa-bodyparser": "^3.0.23",
     "@types/koa-router": "^7.0.22",
-    "@types/uuid": "^3.4.0",
-    "@workday/web-common": "^8.9.0",
     "jest": "^20.0.4",
     "jest-junit": "^2.1.0",
     "nodemon": "^1.11.0",
