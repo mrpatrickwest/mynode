@@ -1,4 +1,5 @@
 import React from 'react'
+import Book from './Book.jsx'
 
 export default class Books extends React.Component {
   render() {
@@ -9,11 +10,7 @@ export default class Books extends React.Component {
         'ul',
         null,
         this.props.items.books.map(function(book, index) {
-          return (
-            <li key={index}>
-              <span style={{ fontStyle: 'italic' }}>{book.title}</span> by {book.author}
-            </li>
-          )
+          return <Book item={book} key={index} />
         })
       )
     )
