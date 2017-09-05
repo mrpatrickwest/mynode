@@ -1,3 +1,18 @@
+@nice-blue: #5b83ad;
+@light-blue: @nice-blue + #111;
+
+h1 {
+  color: @nice-blue;
+}
+
+.with_border {
+  border: 1px solid @light-blue;
+}
+
+#books {
+  .with_border;
+}
+
 .book {
   .book-title {
     font-style: italic;
