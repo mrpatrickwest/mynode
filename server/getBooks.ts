@@ -1,10 +1,10 @@
-function getBooks() {
+import { knex } from './db'
+
+async function getBooks() {
+  const dbBooks = await knex.select().from('book')
+
   return {
-    books: [
-      { title: 'The West Picayune', author: 'Patrick West' },
-      { title: 'Being Good', author: 'Evil Betty' },
-      { title: 'Getting Your Game Face On', author: 'Jolly Bill' },
-    ],
+    books: dbBooks,
   }
 }
 

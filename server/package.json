@@ -11,16 +11,27 @@
     "test": "jest"
   },
   "dependencies": {
+    "@types/knex": "^0.0.61",
     "chalk": "^2.0.1",
     "cookie": "^0.3.1",
     "immutable": "^3.8.1",
     "kcors": "^2.2.1",
+    "knex": "^0.13.0",
     "koa": "^2.3.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.2.1",
-    "koa-socket-2": "^1.0.13"
+    "koa-socket-2": "^1.0.13",
+    "mysql2": "^1.4.2"
   },
-  "keywords": ["pwest", "mrpatrickwest", "node", "yarn", "typescript", "jest", "less"],
+  "keywords": [
+    "pwest",
+    "mrpatrickwest",
+    "node",
+    "yarn",
+    "typescript",
+    "jest",
+    "less"
+  ],
   "bugs": "https://github.com/mrpatrickwest/mynode/issues",
   "devDependencies": {
     "@types/chalk": "^0.4.31",

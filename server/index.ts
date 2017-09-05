@@ -5,6 +5,13 @@ import * as chalk from 'chalk'
 import * as cors from 'kcors'
 import * as IO from 'koa-socket-2'
 import * as Router from 'koa-router'
+import { initDb } from './db'
+
+async function init() {
+  await initDb()
+}
+
+init()
 
 var router = new Router()
 router.get('/', async (ctx, next) => {
@@ -17,7 +24,7 @@ router.get('/', async (ctx, next) => {
 router.get('/something', async (ctx, next) => {
   await next()
   ctx.response.set('Content-Type', 'application/json')
-  var books = getBooks()
+  var books = await getBooks()
   var booksStr = JSON.stringify(books)
   ctx.body = booksStr
 })
@@ -27,7 +34,11 @@ const port = 3000
 const corsOptions: cors.Options = { credentials: true }
 const io = new IO()
 
-app.use(bodyParser()).use(router.routes()).use(router.allowedMethods()).use(cors(corsOptions))
+app
+  .use(bodyParser())
+  .use(router.routes())
+  .use(router.allowedMethods())
+  .use(cors(corsOptions))
 io.attach(app)
 
 app.listen(port, () => console.log(chalk.black.bgGreen.bold(`Listening on port ${port}`)))
