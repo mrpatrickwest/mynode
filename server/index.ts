@@ -1,4 +1,5 @@
 import getBooks from './getBooks'
+import getUsers from './getUsers'
 import * as Koa from 'koa'
 import * as bodyParser from 'koa-bodyparser'
 import * as chalk from 'chalk'
@@ -21,12 +22,19 @@ router.get('/', async (ctx, next) => {
   ctx.body = 'Hello World!'
 })
 
-router.get('/something', async (ctx, next) => {
+router.get('/books', async (ctx, next) => {
   await next()
   ctx.response.set('Content-Type', 'application/json')
   var books = await getBooks()
   var booksStr = JSON.stringify(books)
   ctx.body = booksStr
+})
+
+router.get('/users', async (ctx, next) => {
+  await next()
+  ctx.response.set('Content-Type', 'application/json')
+  const response = await getUsers()
+  ctx.body = response.body
 })
 
 const app = new Koa()
