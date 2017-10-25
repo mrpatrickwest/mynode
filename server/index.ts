@@ -34,7 +34,16 @@ router.get('/users', async (ctx, next) => {
   await next()
   ctx.response.set('Content-Type', 'application/json')
   const response = await getUsers()
-  ctx.body = response.body
+  if (response) {
+    ctx.body = response.body
+  } else {
+    ctx.body = 'Problem retrieving users'
+  }
+})
+
+router.get('/tenant/:tenant', async (ctx, next) => {
+  await next()
+  ctx.body = 'You asked for information on ' + ctx.params.tenant
 })
 
 const app = new Koa()
